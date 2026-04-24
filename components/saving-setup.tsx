@@ -2,15 +2,22 @@
 
 type Props = {
   name: string;
+  onComplete?: () => void;
 };
 
-export default function SavingSetup({ name }: Props) {
+export default function SavingSetup({ name, onComplete }: Props) {
 
   function handleActivate() {
     // mark user as having started saving
     localStorage.setItem("mama_saved", "true");
 
-    // redirect to dashboard
+    // ✅ trigger parent callback if provided
+    if (onComplete) {
+      onComplete();
+      return;
+    }
+
+    // fallback navigation
     window.location.href = "/dashboard";
   }
 
@@ -46,7 +53,7 @@ export default function SavingSetup({ name }: Props) {
       {/* CTA */}
       <button
         onClick={handleActivate}
-        className="w-full bg-primary text-white py-3 rounded-full font-medium shadow-soft transition hover:opacity-90"
+        className="w-full bg-primary text-white py-3 rounded-full font-medium shadow-soft transition hover:opacity-90 active:scale-[0.98]"
       >
         Activate My Savings
       </button>
