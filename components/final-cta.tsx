@@ -23,16 +23,16 @@ export default function FinalCTA() {
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
 
-            {/* LEFT IMAGE (DESKTOP ONLY) */}
-            <div className="hidden lg:block flex-shrink-0">
-              <Image
-                src="/family.webp"
-                alt="Family"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
+            {/* LEFT IMAGE (TABLET + DESKTOP) */}
+      <div className="hidden md:block flex-shrink-0">
+        <Image
+          src="/family.webp"
+          alt="Family"
+          width={200}
+          height={200}
+          className="w-[140px] md:w-[180px] lg:w-[200px] h-auto object-contain"
+        />
+      </div>
 
             {/* CENTER */}
             <div className="text-center lg:text-left max-w-xl space-y-5">
