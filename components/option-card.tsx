@@ -2,6 +2,15 @@
 
 import Image from "next/image";
 
+type OptionCardProps = {
+  title: string;
+  description: string;
+  buttonText: string;
+  image: string;
+  variant?: "green" | "orange";
+  onClick?: () => void;
+};
+
 export default function OptionCard({
   title,
   description,
@@ -9,7 +18,7 @@ export default function OptionCard({
   image,
   variant = "green",
   onClick,
-}) {
+}: OptionCardProps) {
   const isGreen = variant === "green";
 
   return (
@@ -18,7 +27,7 @@ export default function OptionCard({
       className="group cursor-pointer bg-white border border-border rounded-2xl p-6 sm:p-7 md:p-8 flex flex-col items-center text-center h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1"
     >
       {/* IMAGE */}
-      <div className="relative w-32 h-32 mb-6">
+      <div className="relative w-36 h-36 sm:w-40 sm:h-40 mb-6 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-1">
         <Image
           src={image}
           alt={title}
