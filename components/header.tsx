@@ -4,77 +4,79 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
+const navItems = [
+  { label: "How it Works", href: "#" },
+  { label: "For You", href: "#" },
+  { label: "Pregnancy Costs", href: "#" },
+  { label: "Care & Guidance", href: "#" },
+  { label: "About Us", href: "#" },
+];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur bg-white/90 border-b border-border">
-
+      
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
-        <div className="h-[72px] md:h-[80px] flex items-center justify-between">
+        <div className="h-[68px] md:h-[76px] flex items-center justify-between">
 
           {/* LOGO */}
-          <div className="flex items-center gap-2 cursor-pointer">
+          <Link href="/" className="flex items-center gap-2">
             <div className="text-primary text-2xl">♡</div>
-            <span className="font-semibold text-lg tracking-tight text-gray-900">
+            <span className="font-semibold text-base sm:text-lg tracking-tight text-gray-900">
               Mama’s Call
             </span>
-          </div>
+          </Link>
 
           {/* NAV (desktop) */}
-          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-700">
-
-            {[
-              "How it Works",
-              "For You",
-              "Pregnancy Costs",
-              "Care & Guidance",
-              "About Us",
-            ].map((item, i) => (
-              <span
+          <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-gray-700">
+            {navItems.map((item, i) => (
+              <Link
                 key={i}
-                className="cursor-pointer transition hover:text-gray-900"
+                href={item.href}
+                className="transition hover:text-gray-900"
               >
-                {item}
-              </span>
+                {item.label}
+              </Link>
             ))}
-
           </nav>
 
           {/* RIGHT */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
 
-            {/* ✅ EMERGENCY (CLICKABLE FULL BADGE) */}
+            {/* EMERGENCY */}
             <a
               href="tel:+2348000000911"
-              className="hidden lg:flex items-center gap-3 bg-red-50 border border-red-200 px-4 py-2.5 rounded-full hover:bg-red-100 transition-all duration-200 cursor-pointer active:scale-[0.98]"
+              className="hidden lg:flex items-center gap-2.5 bg-red-50 border border-red-200 px-3.5 py-2 rounded-full hover:bg-red-100 transition active:scale-[0.98]"
             >
-              <span className="text-red-500 text-base">🚨</span>
+              <span className="text-red-500 text-sm">🚨</span>
 
               <div className="flex flex-col leading-tight">
-                <span className="text-red-600 font-semibold text-sm">
+                <span className="text-red-600 font-semibold text-xs">
                   0800-0000-911
                 </span>
-                <span className="text-[11px] text-gray-500">
+                <span className="text-[10px] text-gray-500">
                   Free Emergency Line
                 </span>
               </div>
             </a>
 
             {/* CTA */}
-            <Link href="/budget">
-              <button className="hidden sm:block bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold shadow-soft transition-all duration-200 hover:opacity-90 hover:shadow-md active:scale-[0.98]">
+            <Link href="/budget" className="hidden sm:block">
+              <button className="bg-primary text-white px-5 sm:px-6 py-3.5 rounded-full text-sm font-semibold shadow-soft hover:opacity-90 transition">
                 Create Your Baby Budget
               </button>
             </Link>
 
-            {/* Hamburger */}
+            {/* MENU BUTTON */}
             <button
+              aria-label="Toggle menu"
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition"
               onClick={() => setOpen(!open)}
             >
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
 
           </div>
@@ -83,31 +85,26 @@ export default function Header() {
         {/* MOBILE MENU */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-[420px] pb-6" : "max-h-0"
+            open ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0"
           }`}
         >
           <div className="flex flex-col gap-5 pt-4">
 
             {/* LINKS */}
-            {[
-              "How it Works",
-              "For You",
-              "Pregnancy Costs",
-              "Care & Guidance",
-              "About Us",
-            ].map((item, i) => (
-              <span
+            {navItems.map((item, i) => (
+              <Link
                 key={i}
-                className="text-base font-medium text-gray-800 hover:text-gray-900 transition cursor-pointer"
+                href={item.href}
+                className="text-base font-medium text-gray-800 hover:text-gray-900 transition"
               >
-                {item}
-              </span>
+                {item.label}
+              </Link>
             ))}
 
-            {/* ✅ MOBILE EMERGENCY (CLICKABLE) */}
+            {/* EMERGENCY */}
             <a
               href="tel:+2348000000911"
-              className="flex items-center gap-3 border border-red-200 bg-red-50 px-4 py-3 rounded-xl hover:bg-red-100 transition-all duration-200 active:scale-[0.98]"
+              className="flex items-center gap-3 border border-red-200 bg-red-50 px-4 py-3 rounded-xl hover:bg-red-100 transition active:scale-[0.98]"
             >
               <span className="text-red-500 text-base">🚨</span>
 
@@ -123,7 +120,7 @@ export default function Header() {
 
             {/* CTA */}
             <Link href="/budget">
-              <button className="bg-primary text-white px-6 py-3 rounded-full text-base font-semibold shadow-soft transition-all duration-200 hover:opacity-90 active:scale-[0.98]">
+              <button className="w-full bg-primary text-white px-6 py-3.5 rounded-full text-base font-semibold shadow-soft hover:opacity-90 transition">
                 Create Your Baby Budget
               </button>
             </Link>
