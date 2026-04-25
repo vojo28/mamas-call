@@ -36,7 +36,7 @@ export default function Hero() {
 
             {/* HEADLINE */}
             <h1 className="text-[30px] sm:text-[34px] md:text-[54px] font-bold leading-[1.08] tracking-tight text-foreground">
-              Be ready before childbirth happens —
+              Be ready before childbirth happens
               <span className="block text-primary mt-1.5">
                 not when it's too late.
               </span>
