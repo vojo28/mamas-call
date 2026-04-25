@@ -1,7 +1,9 @@
 "use client";
+
 import { Check, Phone, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
 const features = [
   {
     bg: "bg-green-100",
@@ -47,7 +49,7 @@ export default function Hero() {
                 Prepare financially, avoid delays in care, and get support instantly when it matters most.
               </p>
               <p className="text-[15px] sm:text-[16px] md:text-[18px] text-[color:var(--color-body)] max-w-lg">
-                Create your Baby Budget and start saving toward it — at your pace.
+                Create your Baby Budget and start saving toward it, at your pace.
               </p>
             </div>
 
@@ -68,7 +70,7 @@ export default function Hero() {
             {/* MICROCOPY */}
             <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[color:var(--color-body)]">
               Already have a budget?{" "}
-              <span className="text-primary font-semibold underline cursor-pointer">
+              <span className="text-primary font-semibold underline cursor-pointer hover:opacity-80 transition">
                 Start with your own.
               </span>
             </p>
@@ -81,7 +83,7 @@ export default function Hero() {
                   alt="Pregnant woman"
                   fill
                   priority
-                  className="object-cover rounded-[28px]"
+                  className="object-cover object-[85%_center] rounded-[28px]"
                 />
               </div>
             </div>
@@ -126,63 +128,64 @@ export default function Hero() {
             </div>
 
             {/* EMERGENCY */}
-                    <div
-          role="button"
-          tabIndex={0}
-          aria-label="Call maternal emergency line 0800-0000-911"
-          onClick={() => window.open("tel:08000000911")}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              window.open("tel:08000000911");
-            }
-          }}
-          className="group flex items-start sm:items-center gap-4 bg-red-50 border border-red-100 px-4 sm:px-5 py-3 sm:py-4 rounded-xl transition-all duration-200 hover:bg-red-100 hover:shadow-sm active:scale-[0.98] cursor-pointer"
-        >
-  {/* ICON WITH PULSE */}
-  <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-red-100">
-    
-    {/* PULSE RING */}
-    <span className="absolute inline-flex h-full w-full rounded-full bg-red-400/30 animate-ping"></span>
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label="Call maternal emergency line 0800-0000-911"
+              onClick={() => window.open("tel:08000000911")}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  window.open("tel:08000000911");
+                }
+              }}
+              className="group flex items-start sm:items-center gap-4 bg-red-50 border border-red-100 px-4 sm:px-5 py-3 sm:py-4 rounded-xl transition-all duration-200 hover:bg-red-100 hover:shadow-sm active:scale-[0.98] cursor-pointer"
+            >
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-red-100">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-red-400/30 animate-ping"></span>
+                <Phone size={18} className="text-red-600 relative z-10" />
+              </div>
 
-    {/* ICON */}
-    <Phone size={18} className="text-red-600 relative z-10" />
-
-  </div>
-
-  {/* TEXT */}
-  <div className="flex flex-col space-y-1">
-
-  {/* CONTEXT */}
-  <p className="text-[13px] sm:text-[14px] md:text-[15px] text-[color:var(--color-body)]">
-    Maternal emergency?
-  </p>
-
-  {/* ACTION (PRIMARY) */}
-  <p className="text-[15px] sm:text-[16px] md:text-[17px] font-semibold text-red-600 group-hover:underline">
-    Call 0800-0000-911 (Free)
-  </p>
-
-  {/* SUPPORT (SECONDARY) */}
-  <p className="text-[12px] sm:text-[13px] md:text-[14px] text-muted leading-relaxed">
-    24/7 maternal care helpline — speak to a real nurse anytime
-  </p>
-
-</div>
-</div>
+              <div className="flex flex-col space-y-1">
+                <p className="text-sm text-[color:var(--color-body)]">
+                  Maternal emergency?
+                </p>
+                <p className="text-base font-semibold text-red-600 group-hover:underline">
+                  Call 0800-0000-911 (Free)
+                </p>
+                <p className="text-xs text-muted">
+                  24/7 maternal care helpline — speak to a real nurse anytime
+                </p>
+              </div>
+            </div>
 
           </div>
 
           {/* RIGHT */}
-          <div className="hidden md:flex relative justify-center">
+          <div className="hidden md:flex relative justify-center md:pr-8">
             <div className="relative w-full max-w-[520px] h-[740px]">
               <Image
                 src="/hero-mother.webp"
                 alt="Pregnant woman"
                 fill
                 priority
-                className="object-cover rounded-[32px]"
+                className="object-cover object-[85%_center] rounded-[32px]"
               />
+            </div>
+
+            {/* FLOATING CARD */}
+            <div className="hidden md:block absolute top-[65%] -translate-y-1/2 right-[-20px] bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl p-6 w-[280px] space-y-5">
+              {features.map((item, i) => (
+                <div key={i} className="flex gap-4 items-start">
+                  <div className={`w-12 h-12 rounded-full ${item.bg} flex items-center justify-center text-xl`}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-base">{item.title}</p>
+                    <p className="text-sm text-muted mt-1">{item.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

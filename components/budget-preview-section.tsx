@@ -138,7 +138,7 @@ export default function BudgetPreviewSection() {
     {/* TEXT */}
     <div className="space-y-3 text-sm sm:text-base md:text-lg text-muted leading-relaxed">
       <p>
-        Find out what your plan covers — and what it doesn’t — so you can prepare ahead.
+        Find out what your plan covers and what it doesn’t, so you can prepare ahead.
       </p>
 
       <p>
