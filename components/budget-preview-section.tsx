@@ -148,21 +148,22 @@ export default function BudgetPreviewSection() {
   </div>
 
   {/* CTA */}
-  <div className="space-y-4">
+  <div className="space-y-5 sm:space-y-6">
 
-    <Link href="/budget" className="w-full">
-      <button className="w-full bg-primary text-white py-3 sm:py-3.5 rounded-full font-medium text-base shadow-soft transition hover:opacity-90">
-        Create Your Baby Budget
-      </button>
-    </Link>
+  <Link href="/budget" className="w-full">
+    <button className="w-full bg-primary text-white py-3.5 rounded-full font-medium text-base shadow-soft transition hover:opacity-90">
+      Create Your Baby Budget
+    </button>
+  </Link>
 
-    <p className="text-sm sm:text-base text-muted text-center">
-      Already have a budget?{" "}
-      <span className="underline cursor-pointer">
-        Start with your own
-      </span>
-    </p>
-  </div>
+  <p className="text-sm sm:text-base text-muted text-center pt-1">
+    Already have a budget?{" "}
+    <span className="underline cursor-pointer hover:opacity-80 transition">
+      Start with your own
+    </span>
+  </p>
+
+</div>
 </div>
 
         </div>
