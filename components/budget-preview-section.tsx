@@ -156,12 +156,15 @@ export default function BudgetPreviewSection() {
     </button>
   </Link>
 
-  <p className="text-sm sm:text-base text-muted text-center pt-1">
-    Already have a budget?{" "}
-    <span className="underline cursor-pointer hover:opacity-80 transition">
-      Start with your own
-    </span>
-  </p>
+        <p className="text-sm sm:text-base text-muted text-center pt-1">
+        Already have a budget?{" "}
+        <Link
+          href="/coming-soon"
+          className="underline hover:opacity-80 transition font-medium"
+        >
+          Start with your own
+        </Link>
+      </p>
 
 </div>
 </div>

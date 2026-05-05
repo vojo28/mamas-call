@@ -10,10 +10,10 @@ import CriticalDelaysSection from "@/components/partners/CriticalDelaySection";
 import SharedGoalBanner from "@/components/partners/SharedGoalBanner";
 import PartnersFinalCTA from "@/components/partners/PartnersFinalCTA";
 
-export default function PartnersPage() {
+export default function Partnerships() {
   return (
     <main>
-      <Header />
+      
       <PartnersHero/>
       <ProblemSection />
       <GapResponseSection />
@@ -23,7 +23,7 @@ export default function PartnersPage() {
       <PartnersCTASection />
       <SharedGoalBanner />
       <PartnersFinalCTA/>
-      <Footer />
+      
     </main>
   );
 }

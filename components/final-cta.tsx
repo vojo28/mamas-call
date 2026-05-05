@@ -7,32 +7,28 @@ import { MessageCircle, User, PiggyBank, Wallet } from "lucide-react";
 export default function FinalCTA() {
   return (
     <section className="pt-12 pb-16 md:pt-24 md:pb-24 bg-background">
-
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
-        <div className="relative bg-gradient-to-br from-green-50 to-white border border-border rounded-3xl p-6 sm:p-8 md:p-10 overflow-hidden shadow-soft">
-
-          {/* DECOR */}
-          <div className="hidden md:block absolute left-0 bottom-0 w-28 opacity-30">
-            <Image src="/leaf-left.webp" alt="" width={112} height={112} />
-          </div>
-
-          <div className="hidden md:block absolute right-0 bottom-0 w-28 opacity-30">
-            <Image src="/leaf-right.webp" alt="" width={112} height={112} />
-          </div>
+        {/* changed overflow-hidden to overflow-visible */}
+        <div className="relative bg-gradient-to-br from-green-50 to-white border border-border rounded-3xl p-6 sm:p-8 md:p-10 overflow-visible shadow-soft">
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
 
-            {/* LEFT IMAGE (TABLET + DESKTOP) */}
-      <div className="hidden md:block flex-shrink-0">
-        <Image
-          src="/family.webp"
-          alt="Family"
-          width={200}
-          height={200}
-          className="w-[140px] md:w-[180px] lg:w-[200px] h-auto object-contain"
-        />
-      </div>
+           {/* LEFT IMAGE */}
+<div className="hidden md:block relative flex-shrink-0 w-[160px] md:w-[190px] lg:w-[220px]">
+
+  
+  {/* FAMILY IMAGE */}
+  <Image
+    src="/family2.webp"
+    alt="Family"
+    width={220}
+    height={220}
+    priority
+    className="relative z-10 w-full h-auto object-contain "
+  />
+
+</div>
 
             {/* CENTER */}
             <div className="text-center lg:text-left max-w-xl space-y-5">
@@ -45,7 +41,6 @@ export default function FinalCTA() {
                 In less than a minute, you’ll know what to expect and how to prepare.
               </p>
 
-              {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
 
                 <Link href="/budget" className="w-full sm:w-auto">
@@ -54,46 +49,63 @@ export default function FinalCTA() {
                   </button>
                 </Link>
 
-                <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-border bg-white font-medium hover:bg-gray-50 transition">
-                  
+                <Link
+                  href="/nurse"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-border bg-white font-medium hover:bg-gray-50 transition"
+                >
                   <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
                     <MessageCircle size={14} className="text-primary" />
                   </div>
-
-                  Talk to a Nurse
-                </button>
+                  Chat with a Nurse
+                </Link>
 
               </div>
+
             </div>
 
             {/* RIGHT TRUST */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-4 text-sm w-full lg:w-auto">
+            <div className="relative w-full lg:w-auto">
 
-              <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center">
-                  <User size={16} className="text-primary" />
-                </div>
-                <span className="text-sm text-gray-800">
-                  Start with any amount
-                </span>
+              {/* LEAF NOW VISIBLE */}
+              <div className="hidden md:block absolute -right-10 -bottom-4 z-0 opacity-45 pointer-events-none">
+                <Image
+                  src="/leaf-right.webp"
+                  alt=""
+                  width={130}
+                  height={130}
+                  className="object-contain"
+                />
               </div>
 
-              <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-full bg-yellow-50 flex items-center justify-center">
-                  <PiggyBank size={16} className="text-yellow-600" />
-                </div>
-                <span className="text-sm text-gray-800">
-                  Save at your pace
-                </span>
-              </div>
+              <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-4 text-sm">
 
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center">
-                  <Wallet size={16} className="text-blue-600" />
+                <div className="flex items-center gap-2">
+                  <div className="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center">
+                    <User size={16} className="text-primary" />
+                  </div>
+                  <span className="text-sm text-gray-800">
+                    Start with any amount
+                  </span>
                 </div>
-                <span className="text-sm text-gray-800">
-                  Access your money anytime
-                </span>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-9 h-9 rounded-full bg-yellow-50 flex items-center justify-center">
+                    <PiggyBank size={16} className="text-yellow-600" />
+                  </div>
+                  <span className="text-sm text-gray-800">
+                    Save at your pace
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+                  <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center">
+                    <Wallet size={16} className="text-blue-600" />
+                  </div>
+                  <span className="text-sm text-gray-800">
+                    Access your money anytime
+                  </span>
+                </div>
+
               </div>
 
             </div>
@@ -103,7 +115,6 @@ export default function FinalCTA() {
         </div>
 
       </div>
-
     </section>
   );
 }

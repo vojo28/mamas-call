@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Handshake, Shield, Users, HeartHandshake, BarChart3 } from "lucide-react";
+import Link from "next/link";
+import { Handshake, Shield, Users, HeartHandshake, BarChart3,} from "lucide-react";
 
 export default function PartnershipSection() {
   return (
@@ -37,12 +38,17 @@ export default function PartnershipSection() {
               </p>
 
               {/* CTA */}
-              <div className="pt-2">
-                <button className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-medium shadow-soft transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]">
-                  Explore Partnerships
-                  <span className="text-lg">→</span>
-                </button>
-              </div>
+                  <div className="pt-2">
+
+        <Link
+          href="/partnerships"
+          className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-medium shadow-soft transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
+        >
+          Explore Partnerships
+          <span className="text-lg">→</span>
+        </Link>
+
+      </div>
 
               {/* TRUST LINE */}
               <div className="flex items-center gap-2 text-sm text-muted pt-1">

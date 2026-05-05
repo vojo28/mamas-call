@@ -28,7 +28,7 @@ export default function Footer() {
 
             <ul className="space-y-2.5 text-sm sm:text-base text-white/80">
               <li>
-                <Link href="#" className="hover:text-white transition">
+                <Link href="/how-it-works" className="hover:text-white transition">
                   How it Works
                 </Link>
               </li>
@@ -38,13 +38,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition">
+                <Link href="/emergency" className="hover:text-white transition">
                   Emergency Support
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition">
-                  Talk to a Nurse
+                <Link href="/nurse" className="hover:text-white transition">
+                  Chat with a Nurse
                 </Link>
               </li>
             </ul>

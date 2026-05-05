@@ -5,11 +5,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navItems = [
-  { label: "How it Works", href: "#" },
-  { label: "For You", href: "#" },
-  { label: "Pregnancy Costs", href: "#" },
-  { label: "Care & Guidance", href: "#" },
-  { label: "About Us", href: "#" },
+  { label: "How it Works", href: "/how-it-works" },
+  { label: "Pregnancy Costs", href: "/coming-soon" },
+  { label: "Care & Guidance", href: "/coming-soon" },
+  { label: "About Us", href: "/about" },
 ];
 
 export default function Header() {

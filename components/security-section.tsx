@@ -2,6 +2,7 @@
 
 import { CheckCircle, Phone, MessageCircle, ShieldCheck } from "lucide-react";
 import TestimonialCard from "./testimonial-card";
+import Link from "next/link";
 
 export default function SecuritySection() {
   return (
@@ -86,15 +87,21 @@ export default function SecuritySection() {
 
             <div className="space-y-3">
 
-              <button className="w-full bg-red-600 text-white py-3.5 rounded-full font-medium flex items-center justify-center gap-2 hover:opacity-90 transition">
-                <Phone size={18} />
-                Call 0800-911-0000
-              </button>
+                  <a
+        href="tel:08000000911"
+        className="w-full bg-red-600 text-white py-3.5 rounded-full font-medium flex items-center justify-center gap-2 hover:opacity-90 transition"
+      >
+        <Phone size={18} />
+        Call 0800-0000-911
+      </a>
 
-              <button className="w-full border border-red-200 py-3.5 rounded-full font-medium flex items-center justify-center gap-2 bg-white hover:bg-gray-50 transition">
-                <MessageCircle size={18} />
-                Talk to a Nurse
-              </button>
+                    <Link
+          href="/nurse"
+          className="w-full border border-red-200 py-3.5 rounded-full font-medium flex items-center justify-center gap-2 bg-white hover:bg-gray-50 transition hover:scale-[1.02] active:scale-[0.98]"
+        >
+          <MessageCircle size={18} />
+          Chat with a Nurse
+        </Link>
 
             </div>
 
@@ -115,16 +122,16 @@ export default function SecuritySection() {
             <div className="space-y-3">
 
               <TestimonialCard
-                quote="I didn’t have to start calling people for money when it was time. Everything was already planned."
+                quote="I didn’t have to start calling people for money when it was time. My Family Contributed to my Baby's Savings, ahead of time."
                 name="Mother"
-                location="Lagos"
+                location="Abuja"
                 image="/user1.webp"
               />
 
               <TestimonialCard
                 quote="I knew my wife wouldn’t be delayed because of money. That peace of mind is everything."
                 name="Father"
-                location="Abuja"
+                location="Lagos"
                 image="/user2.webp"
               />
 

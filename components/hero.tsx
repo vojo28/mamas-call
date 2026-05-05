@@ -61,19 +61,25 @@ export default function Hero() {
                 </button>
               </Link>
 
-              <button className="w-full sm:w-auto border border-border text-foreground bg-white px-6 py-3.5 rounded-full text-base font-medium hover:bg-gray-100 transition flex items-center justify-center gap-2">
+              <Link
+                href="/nurse"
+                className="w-full sm:w-auto border border-border text-foreground bg-white px-6 py-3.5 rounded-full text-base font-medium hover:bg-gray-100 transition flex items-center justify-center gap-2"
+              >
                 <MessageCircle size={18} />
-                Talk to a Nurse
-              </button>
+                Chat with a Nurse
+              </Link>
             </div>
 
-            {/* MICROCOPY */}
-            <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[color:var(--color-body)]">
-              Already have a budget?{" "}
-              <span className="text-primary font-semibold underline cursor-pointer hover:opacity-80 transition">
-                Start with your own.
-              </span>
-            </p>
+           {/* MICROCOPY */}
+        <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[color:var(--color-body)]">
+          Already have a budget?{" "}
+          <Link
+            href="/coming-soon"
+            className="text-primary font-semibold underline hover:opacity-80 transition"
+          >
+            Start with your own.
+          </Link>
+        </p>
 
             {/* MOBILE IMAGE */}
             <div className="w-full flex justify-center mt-4 md:hidden">
