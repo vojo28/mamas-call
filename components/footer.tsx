@@ -146,10 +146,10 @@ export default function Footer() {
 
           {/* CENTER */}
           <div className="flex gap-5 text-white/70">
-            <Link href="#" className="hover:text-white transition">
+            <Link href="/privacy-policy" className="hover:text-white transition">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-white transition">
+            <Link href="/terms-of-service" className="hover:text-white transition">
               Terms of Use
             </Link>
           </div>

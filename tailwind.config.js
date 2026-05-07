@@ -1,8 +1,11 @@
+/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     extend: {
       colors: {
@@ -19,14 +22,17 @@ module.exports = {
         danger: "#DC2626",
         dangerBg: "#FEF2F2",
       },
+
       boxShadow: {
         soft: "0 10px 30px rgba(0,0,0,0.05)",
       },
+
       borderRadius: {
         xl: "1rem",
         "2xl": "1.5rem",
       },
     },
   },
-  plugins: [],
-};
+
+  plugins: [require("@tailwindcss/typography")],
+}
